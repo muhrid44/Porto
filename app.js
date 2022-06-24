@@ -7,19 +7,7 @@ const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const { Schema } = mongoose;
-// const jsdom = require("jsdom");
-// const { JSDOM } = jsdom;
-// const { window } = new JSDOM( "" );
-// const $ = require( "jquery" )(window);
-// // const { document } = (new JSDOM ("").window)
-// const dom = new JSDOM ("");
-//
-// $(window).click(function () {
-//   console.log("icon clicked");
-//   // var vals = $(this).data("id");
-//   // console.log(vals);
-//   // $("#icons").val(vals);
-// });
+
 
 const app = express();
 
