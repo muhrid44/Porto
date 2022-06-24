@@ -2,41 +2,41 @@
 
 
 
-  <!-- EVENT -->
+<!-- EVENT -->
 <div class="event">
 
-<h1>EVENT</h1>
-<hr>
+  <h1>EVENT</h1>
+  <hr>
 
-<div class="container-fluid">
+  <div class="container-fluid">
 
-<div class="row">
+    <div class="row">
 
-<!-- EVENT CONTENT -->
+      <!-- EVENT CONTENT -->
 
-<% eventArray.forEach(function(events){ %>
-  <div class="col-sm-12 col-lg-6 event-div">
-  <div class="card">
-   <div class="card-body">
-     <form class="" action="/events/<%= events._id %>" method="get">
-      <h5 class="card-title"><%= events.event_name %></h5>
-      <p class="last-modified">last modified : <%= events.edited %></p>
-      <p> <%= events.description.substring(0,100) %> ... </p>
-      <p>Location : <%= events.location.substring(0,50) %> ... </p>
-      <p>Date & Time : <%= events.date %>, <%= events.time %> </p>
+      <% eventArray.forEach(function(events){ %>
+      <div class="col-sm-12 col-lg-6 event-div">
+        <div class="card">
+          <div class="card-body">
+            <form class="" action="/events/<%= events._id %>" method="get">
+              <h5 class="card-title"><%= events.event_name %></h5>
+              <p class="last-modified">last modified : <%= events.edited %></p>
+              <p> <%= events.description.substring(0,100) %> ... </p>
+              <p>Location : <%= events.location.substring(0,50) %> ... </p>
+              <p>Date & Time : <%= events.date %>, <%= events.time %> </p>
 
-      <button type="submit" class="btn btn-dark home-button btn-sm">more details</button>
-      <p>Participant(s) : <%= events.participant.length %>/ <%= events.max_participant %></p>
-      </form>
+              <button type="submit" class="btn btn-dark home-button btn-sm">more details</button>
+              <p>Participant(s) : <%= events.participant.length %>/ <%= events.max_participant %></p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <% }); %>
+
     </div>
   </div>
-</div>
-
-
-<% }); %>
-
-</div>
-</div>
 
 
 </div>
