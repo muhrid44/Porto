@@ -5,126 +5,131 @@
 
 <section id="Top-Content">
 
-      <div class="container-fluid top-container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-12 photo-home-container">
-            <!-- <img class="home-photo" src="1.jpg" alt="home-pic"> -->
+  <div class="container-fluid top-container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 photo-home-container">
+        <!-- <img class="home-photo" src="1.jpg" alt="home-pic"> -->
 
 
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="home-photo/c-1.jpg" class="d-block w-100 home-photo" alt="...">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="home-photo/c-1.jpg" class="d-block w-100 home-photo" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="home-photo/c-2.jpg" class="d-block w-100 home-photo" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="home-photo/c-3.jpg" class="d-block w-100 home-photo" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="home-photo/c-4.jpg" class="d-block w-100 home-photo" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="home-photo/c-5.jpg" class="d-block w-100 home-photo" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
       </div>
-      <div class="carousel-item">
-        <img src="home-photo/c-2.jpg" class="d-block w-100 home-photo" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="home-photo/c-3.jpg" class="d-block w-100 home-photo" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="home-photo/c-4.jpg" class="d-block w-100 home-photo" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="home-photo/c-5.jpg" class="d-block w-100 home-photo" alt="...">
+
+      <div class="col-lg-6 col-sm-12 home-content">
+        <form class="home-content" action="/events/<%= mainEvent._id %>" method="get">
+
+          <h1>Upcoming Event</h1>
+          <!-- <hr> -->
+          <h2><%= mainEvent.event_name.substring(0,15) %></h2>
+          <p class="p-text"><%= mainEvent.description.substring(0,300)%></p>
+          <!-- <hr> -->
+          <h3>Location</h3>
+          <p><%= mainEvent.location.substring(0,50)%></p>
+          <h3>Date & Time</h3>
+          <p><%= mainEvent.date %>, <%= mainEvent.time %></p>
+          <div class="button-home">
+
+            <% function test() {if (mainEvent.event_name === "")  { %>
+            <%  return "disabled" %>
+            <% }} %>
+
+            <button type="submit" class="btn btn-dark home-button btn-lg" <%= test() %>>More Details!</button>
+          </div>
+        </form>
+
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
-          </div>
-
-          <div class="col-lg-6 col-sm-12 home-content">
-            <form class="home-content" action="/events/<%= mainEvent._id %>" method="get">
-
-            <h1>Upcoming Event</h1>
-            <!-- <hr> -->
-            <h2><%= mainEvent.event_name.substring(0,15) %></h2>
-            <p class="p-text"><%= mainEvent.description.substring(0,300)%></p>
-            <!-- <hr> -->
-            <h3>Location</h3>
-            <p><%= mainEvent.location.substring(0,50)%></p>
-            <h3>Date & Time</h3>
-            <p><%= mainEvent.date %>, <%= mainEvent.time %></p>
-            <div class="button-home">
-
-              <% function test() {if (mainEvent.event_name === "")  { %>
-              <%  return "disabled" %>
-              <% }} %>
-
-<button type="submit" class="btn btn-dark home-button btn-lg" <%= test() %>>More Details!</button>
-</div>
-</form>
-
-          </div>
-        </div>
-      </div>
-
-    </section>
+</section>
 
 <!-- WHAT WE DO CONTENT -->
 
 <section id="Home-Description">
 
-<div class="container-fluid mid-container">
-  <div class="row mid-container-title">
-    <h1>What We Do?</h1>
-    <hr>
-    <div class="col-lg-4 col-sm-12 home-description">
-<img src="content/jumat-berbagi.png" alt="what-we-do-1">
-<h1>Jumat Berbagi</h1>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-    </div>
-    <div class="col-lg-4 col-sm-12 home-description mid-description">
-      <img src="content/minggu-berbagi.png" alt="what-we-do-2">
-      <h1>Minggu Berbagi</h1>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-    </div>
-    <div class="col-lg-4 col-sm-12 home-description">
-      <img src="content/peduli-mushola.png" alt="what-we-do-3">
-      <h1>Peduli Mushola</h1>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-    </div>
+  <div class="container-fluid mid-container">
+    <div class="row mid-container-title">
+      <h1>What We Do?</h1>
+      <hr>
+      <div class="col-lg-4 col-sm-12 home-description">
+        <img src="content/jumat-berbagi.png" alt="what-we-do-1">
+        <h1>Jumat Berbagi</h1>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      </div>
+      <div class="col-lg-4 col-sm-12 home-description mid-description">
+        <img src="content/minggu-berbagi.png" alt="what-we-do-2">
+        <h1>Minggu Berbagi</h1>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      </div>
+      <div class="col-lg-4 col-sm-12 home-description">
+        <img src="content/peduli-mushola.png" alt="what-we-do-3">
+        <h1>Peduli Mushola</h1>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      </div>
 
     </div>
-    </div>
+  </div>
 </section>
 
 <!-- ABOUT US SECTION -->
 
 <section id="About-Us">
-<div class="about-us">
-  <h1>About Us</h1>
-  <hr>
-  <img src="logo peduli sekitar.png" alt="">
-  <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+  <div class="about-us">
+    <h1>About Us</h1>
+    <hr>
+    <img src="logo peduli sekitar.png" alt="">
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+      exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+      nulla pariatur?</p>
     <hr>
     <div class="row bottom-container-title">
-  <h2>Our Founder</h2>
-  <div class="col-lg-4 col-sm-12 our-founder">
-    <img src="founder/mbanab.jpg" alt="">
-    <h3><strong>Nabila</strong></h3>
-    <p><em>"How wonderful it is that nobody need wait a single moment before starting to improve the world" -Anne Frank</em></p>
+      <h2>Our Founder</h2>
+      <div class="col-lg-4 col-sm-12 our-founder">
+        <img src="founder/mbanab.jpg" alt="">
+        <h3><strong>Nabila</strong></h3>
+        <p><em>"How wonderful it is that nobody need wait a single moment before starting to improve the world" -Anne Frank</em></p>
+      </div>
+      <div class="col-lg-4 col-sm-12 our-founder">
+        <img src="founder/masrizal.jpg" alt="">
+        <h3><strong>Rizal</strong></h3>
+        <p><em>"Kebahagiaan tidak akan habis karena membaginya. Ketahuilah, kebahagiaan bertambah saat kamu bersedia untuk berbagi" -Andy F. Noya</em></p>
+      </div>
+      <div class="col-lg-4 col-sm-12 our-founder">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/38/An_image_of_the_character_Mike_Wheeler_%28portrayed_by_Finn_Wolfhard%29_from_season_3_of_the_Netflix_series_%22Stranger_Things%22.png" alt="">
+        <h3><strong>Mike The Bucin</strong></h3>
+        <p><em>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</em></p>
+      </div>
+    </div>
   </div>
-  <div class="col-lg-4 col-sm-12 our-founder">
-    <img src="founder/masrizal.jpg" alt="">
-    <h3><strong>Rizal</strong></h3>
-    <p><em>"Kebahagiaan tidak akan habis karena membaginya. Ketahuilah, kebahagiaan bertambah saat kamu bersedia untuk berbagi" -Andy F. Noya</em></p>
-  </div>
-  <div class="col-lg-4 col-sm-12 our-founder">
-    <img src="https://upload.wikimedia.org/wikipedia/en/3/38/An_image_of_the_character_Mike_Wheeler_%28portrayed_by_Finn_Wolfhard%29_from_season_3_of_the_Netflix_series_%22Stranger_Things%22.png" alt="">
-    <h3><strong>Mike The Bucin</strong></h3>
-    <p><em>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</em></p>
-  </div>
-</div>
-</div>
 
 
 </section>
