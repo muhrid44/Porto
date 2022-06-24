@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb+srv://"+process.env.MONGO+"cluster0.zhccn.mongodb.net/todolistDB") //STEP 2
+mongoose.connect("mongodb+srv://"+process.env.MONGO+"cluster0.zhccn.mongodb.net/EventDB") //STEP 2
 
 // ADMIN SCHEMA
 
@@ -46,16 +46,16 @@ passport.deserializeUser(Admin.deserializeUser());
 
 
 // ADMIN REGISTER
-// Admin.register({username:"pedulisekitar44167"}, "@pedsek44167", function(err, admin){
-//   if (err){
-//     console.log(err);
-//   }
-//   else {
-//     passport.authenticate("local")(function(){
-//       console.log("data_saved");
-//     })
-//   }
-// })
+Admin.register({username:"pedulisekitar44167"}, "@pedsek44167", function(err, admin){
+  if (err){
+    console.log(err);
+  }
+  else {
+    passport.authenticate("local")(function(){
+      console.log("data_saved");
+    })
+  }
+})
 
 // PARTICIPANT
 
@@ -484,6 +484,10 @@ app.get("/delete/:id", function(req,res){
 
 
 
-app.listen(3000, function(){
-  console.log("port 3000 is running");
-});
+  let port = process.env.PORT;
+  if (port == null || port == "") {
+    port = 3000;
+  }
+  app.listen(port, function(){
+    console.log("connected");
+  });
