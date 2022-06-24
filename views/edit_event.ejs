@@ -1,0 +1,75 @@
+<%- include("partials/header_admin") -%>
+
+
+  <!-- EDIT FORM  -->
+<div class="input-form">
+
+<h1>EDIT EVENT</h1>
+<hr>
+
+<div class="container-fluid input-form-content">
+
+  <form action="/edit" method="post">
+<div class="row">
+  <div class="col-sm-12 col-lg-6 input-div">
+    <input type="hidden" name="id" value="<%= id %>">
+    <div class="mb-3">
+      <label for="eventNameInput" class="form-label">Event Name</label>
+      <input type="text" class="form-control" id="eventNameInput" name="name" value="<%= event_name %>">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" rows="4" name="description" ><%= description %></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" id="date" name="date" value="<%= date %>">
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Time</label>
+      <input type="time" class="form-control" id="time" name="time" value="<%= time %>">
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-6 input-div">
+    <div class="mb-3">
+      <label for="numberParticipant" class="form-label">Max Participant</label>
+      <input type="number" class="form-control" id="numberParticipant" name="numberParticipant" value="<%= max_participant %>">
+    </div>
+    <div class="mb-3">
+      <label for="meetingPoint" class="form-label">Location Address</label>
+      <textarea class="form-control" id="meetingPoint" rows="4" name="meetingPoint"><%= location %></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="gmaps" class="form-label">*Gmaps URL</label>
+      <input type="url" class="form-control" id="gmaps" name="gmaps" value="<%= gmaps %>">
+    </div>
+    <div class="mb-3">
+      <label for="landmark" class="form-label">Landmark</label>
+      <input type="text" class="form-control" id="landmark" name="landmark" aria-describedby="landmarkHelp" value="<%= landmark %>">
+      <div id="landmarkHelp" class="form-text"><i>Landmark for meeting point e.g : at Indomaret's parking lot</i></div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+    <div class="submit-button">
+    <button type="submit" class="btn btn-dark home-button btn-md">Save Changes</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,60 @@
+<%- include("partials/header_admin") -%>
+
+
+  <!-- EVENT -->
+<div class="event">
+
+<h1>MANAGE EVENT</h1>
+
+<form class="" action="/create_event" method="get">
+<button type="submit" class="btn btn-dark home-button btn-sm create-button">Create Event</button>
+</form>
+
+<hr>
+
+<div class="container-fluid">
+
+
+
+<div class="row">
+
+<!-- EVENT CONTENT -->
+<% eventArray.forEach(function(events){ %>
+  <div class="col-sm-12 col-lg-6 event-div">
+  <div class="card">
+    <div class="card-body">
+    <form id="moreDetails" action="/admin_event/<%= events._id %>" method="get">
+
+      <h5 class="card-title"><%= events.event_name %></h5>
+      <p class="last-modified">last modified : <%= events.edited %></p>
+      <a class="icon" href="/delete/<%= events._id %>" data-bs-toggle="tooltip" title="delete"><i class="icons fa-solid fa-eraser" ></i></a>
+      <a class="icon" href="/edit/<%= events._id %>" data-bs-toggle="tooltip" title="edit"><i class="fa-solid fa-pencil" ></i></a>
+
+
+      <p> <%= events.description.substring(0,100) %> ... </p>
+      <p>Location : <%= events.location.substring(0,50) %> ... </p>
+      <p>Date & Time : <%= events.date %>, <%= events.time %> </p>
+      <button type="submit" class="btn btn-dark home-button btn-sm" name="moreDetails">more details</button>
+      <p>Participant(s) : <%= events.participant.length %>/ <%= events.max_participant %></p>
+    <!-- </form> -->
+    <!-- </form> -->
+
+      </div>
+  </div>
+</div>
+
+<% }); %>
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+  </div>
+<%- include("partials/footer") -%>

@@ -1,0 +1,67 @@
+<%- include("partials/header_admin") -%>
+
+
+  <!-- EVENT-DETAIL -->
+<div class="event-detail">
+
+<h1><%= event_name %></h1>
+<hr>
+
+<div class="container-fluid event-detail-content">
+
+  <div class="manage-icon">
+    <a class="icon-detail" href="/edit/<%= id %>" data-bs-toggle="tooltip" title="edit"><i class="fa-solid fa-pencil"></i></a>
+    <a class="icon-detail"  href="/delete/<%= id %>" data-bs-toggle="tooltip" title="delete"><i class="fa-solid fa-eraser"></i></a>
+  </div>
+
+
+  <p class="last-modified">last modified : <%= edited %></p>
+
+  <h4>Description</h4>
+  <p><%= description %></p>
+
+<h4>Location</h4>
+<p class="location"><%= location %></p>
+<p>Landmark : <%= landmark %></p>
+<a href="<%= gmaps %>" class="tooltip-map" data-bs-toggle="tooltip" title="open with gmaps"><p>open maps</p></a>
+
+
+<h4>Date & Time</h4>
+<p><%= date %>, <%= time %></p>
+
+</div>
+
+<div class="table">
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+      <th>Vehicle</th>
+    </tr>
+
+<% list.forEach(function(lists){ %>
+  <tr>
+    <td><%= number++ %></td>
+    <td><%= lists.name %></td>
+    <td><%= lists.email %></td>
+    <td><%= lists.phone %></td>
+    <td><%= lists.address %></td>
+    <td><%= lists.vehicle %></td>
+  </tr>
+<% }) %>
+
+
+
+  </table>
+  <!-- <button type="button" class="btn btn-dark home-button btn-sm">Send a broadcast message!</button> -->
+</div>
+
+</div>
+
+
+</div>
+
+<%- include("partials/footer") -%>

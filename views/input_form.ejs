@@ -1,0 +1,66 @@
+<%- include("partials/header_user") -%>
+
+
+  <!-- INPUT FORM  -->
+<div class="input-form">
+
+<h1>INPUT FORM</h1>
+<hr>
+
+<div class="container-fluid input-form-content">
+
+  <h4>Please fill the required fields below</h4>
+  <form method="post" action="/input">
+    <input type="hidden" name="id" value="<%= id %>">
+<div class="row">
+  <div class="col-sm-12 col-lg-6 input-div">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" class="form-control" id="nameInput" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-6 input-div">
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="number" class="form-control" id="phoneNumber" name="phone">
+    </div>
+
+    <div class="mb-3">
+      <label for="addressInput" class="form-label">Address</label>
+      <textarea class="form-control" id="addressInput" rows="3" name="address"></textarea>
+    </div>
+    <select class="form-select" aria-label="Default select example" name="vehicle">
+    <option selected>Vehicle Used</option>
+    <option value="Motorcycle">Motorcycle</option>
+    <option value="Car">Car</option>
+    <option value="Public Transport">Public Transport</option>
+  </select>
+
+  </div>
+</div>
+
+
+
+
+    <div class="submit-button">
+    <button type="submit" class="btn btn-dark home-button btn-md">Join Event!</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+<%- include("partials/footer") -%>

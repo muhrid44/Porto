@@ -1,0 +1,63 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.top-form {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.bot-form {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+img {
+  width: 125px;
+  height: 100px;
+}
+
+.home-button {
+  background-color: #EEC373;
+  color: black;
+  border-color: #354259;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-width: inherit;
+}
+
+.home-button:hover {
+  background-color: white;
+}
+
+.form-control {
+  padding: 10px 10px;
+}
+
+.copyright {
+  padding-top: 30px;
+  color: #808080 ;
+  font-size: 1rem;
+}
+
+.copyright > a {
+  color: #808080;
+}

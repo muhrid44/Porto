@@ -1,0 +1,42 @@
+<%- include("partials/header_user") -%>
+
+
+  <!-- EVENT-DETAIL -->
+<div class="event-detail">
+<form class="" action="/join/<%= id %>" method="get">
+<h1><%= event_name %></h1>
+<hr>
+
+<div class="container-fluid event-detail-content">
+
+  <p class="last-modified">last modified : <%= edited %> </p>
+
+  <h4>Description</h4>
+  <p><%= description %></p>
+
+<h4>Location</h4>
+<p class="location"><%= location %></p>
+<p>Landmark : <%= landmark %> </p>
+<a href="<%= gmaps %>" class="tooltip-map" data-bs-toggle="tooltip" title="open with gmaps"><p>open maps</p></a>
+
+
+<h4>Date & Time</h4>
+<p><%= date %>, <%= time %></p>
+
+<p>Participant : <%= participant.length %>/<%= max_participant %> </p>
+
+<% function test() {if (participant.length === max_participant)  { %>
+<%  return "disabled" %>
+<% }} %>
+
+<div class="detail-button">
+<button type="submit" class="btn btn-dark home-button btn-lg" <%= test() %>>Join Event!</button>
+</div>
+</div>
+</form>
+</div>
+
+
+</div>
+
+<%- include("partials/footer") -%>

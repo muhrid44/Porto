@@ -1,0 +1,447 @@
+html, body {
+  height: 100%;
+}
+
+#body {
+  position: relative;
+}
+
+.main-container {
+  padding: 0;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+}
+
+h1 {
+font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+}
+
+/* NAVBAR  */
+
+.navbar {
+  background-color: #FDF6EC;
+
+  }
+
+  .nav-container {
+    padding: 0 15px;
+
+
+  }
+
+  .nav-list {
+    padding: 0 10px;
+  }
+
+  .dropdown-menu {
+    background-color: #FDF6EC;
+  width: 100px;
+  min-width: auto;
+  width: 120px;
+  }
+
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #EEC373;
+            background-color:#FDF6EC;
+ }
+
+a.nav-link:hover {
+  color: #EEC373;
+}
+
+  a.dropdown-item {
+    color: #354259;
+    position: relative;
+
+  }
+
+a.nav-link {
+  color: #354259;
+  font-size: 1.2rem;
+}
+
+.toggled {
+  text-align: right;
+}
+
+  /* HOME TOP CONTENT */
+
+  .top-container {
+    width: auto;
+    height: auto;
+    max-height: 700;
+    background-color: #EFEAD8;
+  }
+
+  .home-content {
+    max-height: auto;
+    padding: 15px 15px;
+    text-align: justify;
+line-height: 1.5;
+font-size: 1.5rem;
+color: black;
+  }
+
+.home-content > h1 {
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+
+  font-size: 1.5rem;
+}
+
+.home-content > h2 {
+  margin-top: 10px;
+  font-size: 4rem;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+
+.home-content > h3 {
+  font-size: 1.7rem;
+}
+
+.home-content > hr {
+  opacity: 30%;
+  border-color: #354259;
+  width: 80%;
+  text-align: left;
+}
+
+  .photo-home-container {
+    max-height: 100%;
+    padding: 15px 15px;
+    text-align: center;
+  }
+
+  .home-button {
+    background-color: #EEC373;
+    color: black;
+    border-color: #354259;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-width: inherit;
+  }
+
+.home-photo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  /* border-radius: 3% 15%; */
+  margin: auto;
+}
+
+  /* HOME MID CONTENT */
+
+  .home-description {
+    padding: 5px 50px;
+  }
+
+.mid-container {
+  background-color: #FDF6EC;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.mid-container-title > h1 {
+  font-size: 3rem;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.mid-container-title > hr {
+  border-style: solid none none;
+  border-top-width: 1px;
+  opacity: 10%;
+  width: 90%;
+  margin: 0 auto 25px auto;
+}
+
+.home-description > img {
+  /* padding-top: 75px;
+    padding: 75px 50px; */
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+
+}
+
+
+.home-description > h1 {
+  font-size: 2rem;
+      font-family: 'Roboto Slab', serif;
+}
+
+.home-description > p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.mid-description {
+  border-style: none solid;
+border-width: thin;
+  border-color: #e7e1d9;
+}
+
+/* ABOUT US CONTENT */
+
+.about-us {
+  text-align: center;
+  padding: 30px 200px;
+  background-color: #180A0A;
+  color: #ECE5C7;
+}
+
+.about-us > img {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  height: 200px;
+  width: 300px;
+}
+
+.about-us > p {
+  line-height: 2;
+}
+
+.about-us > hr {
+  opacity: 10%;
+}
+
+.about-us > h2 {
+  margin-top: 50px;
+  font-size: 1.8rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.our-founder {
+  text-align: center;
+  padding: 15px 30px;
+}
+
+.our-founder > img {
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: solid;
+  border-color: #ECE5C7;
+  border-width: 2px;
+}
+
+.our-founder > h3 {
+  padding-top: 15px;
+  font-size: 1.5rem;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 10px 15px;
+  background-color: #EFEAD8;
+  text-align: center;
+}
+
+#footer > h4 {
+  font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+.footer > p {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.mini-logo {
+
+  color: black;
+  margin: 10px 5px 50px;
+  font-size: 1.5rem;
+}
+
+.footer-mini-logo {
+  color: black;
+  margin: 50px 20px 50px;
+  font-size: 1.5rem;
+}
+
+.footer-logo {
+  padding-top: 30px;
+}
+
+.mini-logo:hover {
+  color: #075e54;
+}
+
+.our-founder > p {
+
+margin-bottom: 0;
+
+}
+
+.line:hover {
+  color: #00b900
+}
+
+.footer-container > hr {
+  border-style: solid none none;
+  border-top-width: 1px;
+  opacity: 10%;
+  width: 75%;
+  margin: 0 auto 25px auto;
+}
+
+.copyright {
+  padding-top: 50px;
+  color: #808080 ;
+  font-size: 0.9rem;
+}
+
+.copyright > a {
+  color: #808080;
+}
+
+
+/* EVENT PAGE */
+
+.event > h1 {
+  padding-top: 15px;
+  padding-left: 75px;
+}
+
+.event > hr {
+  border-style: solid none none none;
+  width: 80%;
+  opacity: 20%;
+  margin-left: 75px;
+}
+
+
+.event-div {
+  padding: 75px 75px;
+}
+
+.card-body {
+  line-height: 1.5;
+}
+
+.card-title {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.last-modified {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+/* EVENT DETAIL */
+
+.event-detail > h1, .input-form > h1 {
+  padding-top: 15px;
+}
+
+.event-detail {
+  padding-left: 75px;
+}
+
+.event-detail-content {
+  padding: 10px 0 10px 0;
+  width: 75%;
+  margin-left: 0;
+}
+
+.event-detail-content > p {
+  text-align: justify;
+  line-height: 2;
+}
+
+.location {
+  margin-bottom: 0;
+}
+
+.event-detail-content > a {
+  color: #354259;
+}
+
+.event-detail-content > a:hover {
+  color: #EEC373;
+}
+
+.detail-button > .home-button {
+  text-align: left;
+}
+
+.tooltip-map > .tooltip-inner {
+  background-color: #EEC373;
+}
+
+/* INPUT FORM SECTION */
+
+.submit-button > .home-button {
+  margin-top: 50px;
+}
+
+.input-form-content {
+  padding: 10px 0 10px 0;
+  margin-left: 0;
+  width: 80%;
+  margin-right: 0;
+}
+
+.input-div {
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 25px;
+}
+
+.input-form {
+  padding-left: 75px;
+}
+
+.input-form > hr {
+  border-style: solid none none none;
+  width: 80%;
+  opacity: 20%;
+  margin-left: 0;
+}
+
+.input-form-content .row {
+  margin: auto;
+}
+
+/* SUCCESS REGISTRATION */
+
+.success-registration {
+  margin: 100px 100px auto 100px;
+}
+/* RESPONSIVE */
+
+@media (max-width: 993px) {
+
+.home-content > h3, .home-content > p {
+text-align: center;
+}
+
+.home-content .p-text {
+  text-align: justify;
+}
+
+.button-home {
+  margin: 0;
+  text-align: center;
+}
+
+}
