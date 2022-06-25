@@ -12,8 +12,7 @@ Nodejs,
 express, 
 API, 
 mongoDB, 
-mongoose, 
-passport authentication + cookies, 
+mongoose, authentication + session, 
 EJS, 
 github version control
 }
