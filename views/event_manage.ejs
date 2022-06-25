@@ -27,7 +27,7 @@
 
               <h5 class="card-title"><%= events.event_name %></h5>
               <p class="last-modified">last modified : <%= events.edited %></p>
-              <a class="icon" href="/delete/<%= events._id %>" data-bs-toggle="tooltip" title="delete"><i class="icons fa-solid fa-eraser"></i></a>
+              <a id="delete" class="icon" href="exampleModal" data-bs-toggle="modal" data-id="<%= events._id %>" data-bs-target="#exampleModal" title="delete""><i class="icons fa-solid fa-eraser"></i></a>
               <a class="icon" href="/edit/<%= events._id %>" data-bs-toggle="tooltip" title="edit"><i class="fa-solid fa-pencil"></i></a>
 
 
@@ -36,7 +36,7 @@
               <p>Date & Time : <%= events.date %>, <%= events.time %> </p>
               <button type="submit" class="btn btn-dark home-button btn-sm" name="moreDetails">more details</button>
               <p>Participant(s) : <%= events.participant.length %>/ <%= events.max_participant %></p>
-              <!-- </form> -->
+              </form>
               <!-- </form> -->
 
           </div>
@@ -55,6 +55,25 @@
 
 </div>
 
+<form class="" action="/delete" method="post">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure want to delete this event?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-dark home-button btn-md delete" name="delete" val="">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
 
 </div>
 <%- include("partials/footer") -%>

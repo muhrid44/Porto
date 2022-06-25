@@ -9,6 +9,11 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const {
   Schema
 } = mongoose;
+const mailgun = require("mailgun-js");
+
+//MAILGUN VALIDATION API & DOMAIN
+const API_KEY = process.env.API_KEY; //env
+const DOMAIN = process.env.DOMAIN; //env
 
 
 const app = express();
@@ -30,7 +35,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb+srv://" + process.env.MONGO + "cluster0.zhccn.mongodb.net/EventDB") //STEP 2
+// mongoose.connect("mongodb+srv://" + process.env.MONGO + "cluster0.zhccn.mongodb.net/EventDB")
+mongoose.connect("mongodb://localhost:27017/EventDB") //LOCAL DB
+
 
 // ADMIN SCHEMA
 
@@ -50,17 +57,18 @@ passport.deserializeUser(Admin.deserializeUser());
 
 
 // ADMIN REGISTER
-Admin.register({
-  username: "pedulisekitar44167"
-}, "@pedsek44167", function(err, admin) {
-  if (err) {
-    console.log(err);
-  } else {
-    passport.authenticate("local")(function() {
-      console.log("data_saved");
-    })
-  }
-})
+
+// Admin.register({
+//   username: process.env.USERNAME_ADMIN
+// }, process.env.PASSWORD_ADMIN, function(err, admin) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     passport.authenticate("local")(function() {
+//       console.log("data_saved");
+//     })
+//   }
+// })
 
 // PARTICIPANT
 
@@ -177,25 +185,6 @@ app.get("/login_admin", function(req, res) {
   res.render("login_admin")
 })
 
-app.post("/join", function(req, res) {
-  const name = req.body.name;
-  const email = req.body.email;
-  const phone = req.body.phone;
-  const address = req.body.address;
-  const vehicle = req.body.vehicle;
-
-  const participant = new Participant({
-    name: name,
-    email: email,
-    phone: phone,
-    address: address,
-    vehicle: vehicle
-  });
-
-  participant.save();
-
-});
-
 app.get("/events/:id", function(req, res) {
 
   const eventID = req.params.id;
@@ -269,6 +258,20 @@ app.post("/input", function(req, res) {
           eventsFound.save(function(err) {
             if (!err) {
               // console.log("cek");
+              const mg = mailgun({
+                apiKey: process.env.API_KEY,
+                domain: DOMAIN
+              });
+              const data = {
+                from: "Peduli Sekitar <pedulisekitar1@gmail.com>",
+                to: req.body.email,
+                subject: "Thank You for Joining",
+                template: "pedulisekitar",
+              };
+              mg.messages().send(data, function(error, body) {
+                console.log(body);
+              });
+
               res.render("success_registration")
             }
           });
@@ -371,6 +374,7 @@ app.post("/create", function(req, res) {
 
   const dateCreated = new Date().toLocaleDateString("en-US")
 
+
   const events = new Event({
     event_name: eventName,
     description: eventDescription,
@@ -391,9 +395,10 @@ app.post("/create", function(req, res) {
 
 
 
-app.get("/delete/:id", function(req, res) {
+app.post("/delete", function(req, res) {
 
-  const deletedEvent = req.params.id;
+
+  const deletedEvent = req.body.delete;
 
   Event.findByIdAndRemove({
     _id: deletedEvent
@@ -410,10 +415,6 @@ app.get("/delete/:id", function(req, res) {
 app.get("/edit/:id", function(req, res) {
 
   const editedEvent = req.params.id;
-
-  // Article.replaceOne(
-  //   {title:req.params.articleTitle},
-  //   {title:req.body.title, content:req.body.content},
 
   Event.findOne({
     _id: editedEvent
@@ -448,7 +449,6 @@ app.get("/edit/:id", function(req, res) {
 });
 
 app.post("/edit", function(req, res) {
-  // console.log(req.body.id);
 
   Event.findOneAndUpdate({
     _id: req.body.id
