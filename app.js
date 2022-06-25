@@ -35,8 +35,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// mongoose.connect("mongodb+srv://" + process.env.MONGO + "cluster0.zhccn.mongodb.net/EventDB")
-mongoose.connect("mongodb://localhost:27017/EventDB") //LOCAL DB
+mongoose.connect("mongodb+srv://" + process.env.MONGO + "cluster0.zhccn.mongodb.net/EventDB")
+// mongoose.connect("mongodb://localhost:27017/EventDB") //LOCAL DB
 
 
 // ADMIN SCHEMA
