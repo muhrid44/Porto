@@ -15,36 +15,36 @@
         <div class="col-sm-12 col-lg-6 input-div">
           <div class="mb-3">
             <label for="eventNameInput" class="form-label">Event Name</label>
-            <input type="text" class="form-control" id="eventNameInput" name="name">
+            <input type="text" class="form-control" id="eventNameInput" name="name" placeholder="max 15 characters" maxlength="15" required>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="4" name="description"></textarea>
+            <textarea class="form-control" id="description" rows="4" name="description" required></textarea>
           </div>
           <div class="mb-3">
-            <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" id="date" name="date">
+            <label for="date" class="form-label" >Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
           </div>
           <div class="mb-3">
             <label for="time" class="form-label">Time</label>
-            <input type="time" class="form-control" id="time" name="time">
+            <input type="time" class="form-control" id="time" name="time" required>
           </div>
         </div>
         <div class="col-sm-12 col-lg-6 input-div">
           <div class="mb-3">
             <label for="numberParticipant" class="form-label">Max Participant</label>
-            <input type="number" class="form-control" id="numberParticipant" name="numberParticipant">
+            <input type="number" class="form-control" id="numberParticipant" name="numberParticipant" required>
           </div>
           <div class="mb-3">
             <label for="meetingPoint" class="form-label">Location Address</label>
-            <textarea class="form-control" id="meetingPoint" rows="4" name="meetingPoint"></textarea>
+            <textarea class="form-control" id="meetingPoint" rows="4" name="meetingPoint" required></textarea>
           </div>
           <div class="mb-3">
-            <label for="gmaps" class="form-label">*Gmaps URL</label>
+            <label for="gmaps" class="form-label">Gmaps URL <i>(Optional)</i></label>
             <input type="url" class="form-control" id="gmaps" name="gmaps">
           </div>
           <div class="mb-3">
-            <label for="landmark" class="form-label">Landmark</label>
+            <label for="landmark" class="form-label">Landmark <i>(Optional)</i></label>
             <input type="text" class="form-control" id="landmark" name="landmark" aria-describedby="landmarkHelp">
             <div id="landmarkHelp" class="form-text"><i>Landmark for meeting point e.g : at Indomaret's parking lot</i></div>
           </div>

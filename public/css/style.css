@@ -1,6 +1,13 @@
-html, body {
-  height: 100%;
+body {
+  height: 100vh;
+  margin: 0;
+  position: relative;
 }
+
+footer.home-footer {
+  position: relative;
+}
+
 
 #body {
   position: relative;
@@ -91,7 +98,6 @@ color: black;
   text-align: left;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-
   font-size: 1.5rem;
 }
 
@@ -247,6 +253,7 @@ border-width: thin;
   padding: 10px 15px;
   background-color: #EFEAD8;
   text-align: center;
+
 }
 
 #footer > h4 {
@@ -442,6 +449,20 @@ text-align: center;
 .button-home {
   margin: 0;
   text-align: center;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 
 }

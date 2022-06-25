@@ -16,27 +16,27 @@
         <div class="col-sm-12 col-lg-6 input-div">
           <div class="mb-3">
             <label for="nameInput" class="form-label">Name</label>
-            <input type="text" class="form-control" id="nameInput" name="name">
+            <input type="text" class="form-control" id="nameInput" name="name" required>
           </div>
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email">
+            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email" required>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
         </div>
         <div class="col-sm-12 col-lg-6 input-div">
           <div class="mb-3">
             <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input type="number" class="form-control" id="phoneNumber" name="phone">
+            <input type="number" class="form-control" id="phoneNumber" name="phone" required>
           </div>
 
           <div class="mb-3">
             <label for="addressInput" class="form-label">Address</label>
-            <textarea class="form-control" id="addressInput" rows="3" name="address"></textarea>
+            <textarea class="form-control" id="addressInput" rows="3" name="address" required></textarea>
           </div>
-          <select class="form-select" aria-label="Default select example" name="vehicle">
-            <option selected>Vehicle Used</option>
-            <option value="Motorcycle">Motorcycle</option>
+          <label for="form-select" class="form-label">Vehicle Used</label>
+          <select class="form-select" aria-label="Default select example" name="vehicle" required>
+            <option selected="Motorcycle">Motorcycle</option>
             <option value="Car">Car</option>
             <option value="Public Transport">Public Transport</option>
           </select>
