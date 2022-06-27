@@ -1,6 +1,6 @@
 # Porto Muhammad Ridwan 
 
-link = https://immense-shore-05369.herokuapp.com/
+heroku = https://immense-shore-05369.herokuapp.com/
 
 login admin username = pedulisekitar44167,
 login admin password = @pedsek44167
