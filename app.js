@@ -10,11 +10,12 @@ const {
   Schema
 } = mongoose;
 const mailgun = require("mailgun-js");
+var SibApiV3Sdk = require('sib-api-v3-sdk');
+var defaultClient = SibApiV3Sdk.ApiClient.instance;
 
-//MAILGUN VALIDATION API & DOMAIN
-const API_KEY = process.env.API_KEY; //env
-const DOMAIN = process.env.DOMAIN; //env
-
+// Configure API key authorization: api-key
+var apiKey = defaultClient.authentications['api-key'];
+apiKey.apiKey = process.env.API_KEY;
 
 const app = express();
 
@@ -257,19 +258,22 @@ app.post("/input", function(req, res) {
           );
           eventsFound.save(function(err) {
             if (!err) {
-              // console.log("cek");
-              const mg = mailgun({
-                apiKey: process.env.API_KEY,
-                domain: DOMAIN
-              });
-              const data = {
-                from: "Peduli Sekitar <pedulisekitar1@gmail.com>",
-                to: req.body.email,
-                subject: "Thank You for Joining",
-                template: "pedulisekitar",
-              };
-              mg.messages().send(data, function(error, body) {
-                console.log(body);
+
+              new SibApiV3Sdk.TransactionalEmailsApi().sendTransacEmail({
+                subject: 'Hello There',
+                sender: {
+                  'email': 'pedulisekitar1@gmail.com',
+                  'name': 'Peduli Sekitar'
+                },
+                to: [{
+                  'name': req.body.name,
+                  'email': req.body.email
+                }],
+                templateId: 1
+              }).then(function(data) {
+                console.log(data);
+              }, function(error) {
+                console.error(error);
               });
 
               res.render("success_registration")
