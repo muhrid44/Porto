@@ -9,7 +9,6 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const {
   Schema
 } = mongoose;
-const mailgun = require("mailgun-js");
 var SibApiV3Sdk = require('sib-api-v3-sdk');
 var defaultClient = SibApiV3Sdk.ApiClient.instance;
 
